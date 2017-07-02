@@ -16,6 +16,7 @@ public class DiscoverService {
 	@Autowired
 	private DiscoveryClient discoveryClient;
 	
+
 	@RequestMapping("/services")
 	public String doFind(){
 		StringBuilder bf = new StringBuilder("");
@@ -36,4 +37,10 @@ public class DiscoverService {
 			return "no services found!";
 		}
 	}
+	/*@Autowired
+    private RestTemplate restTemplate;
+	@RequestMapping("/user/1")
+	public User query(){
+		return restTemplate.getForObject("http://server-01/user/1", User.class);
+	}*/
 }
