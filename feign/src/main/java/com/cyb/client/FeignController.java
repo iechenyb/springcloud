@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class FeignController {
+	
   @Autowired
   private TestFeignClient testFeignClient;
 
@@ -16,6 +17,7 @@ public class FeignController {
     String string = this.testFeignClient.add(a,b);
     return string;
   }
+  
   @RequestMapping(value = "/sub" , method = RequestMethod.GET)
   public int sub(@RequestParam Integer a,@RequestParam Integer b) {
     int string = (a-b);
