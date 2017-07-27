@@ -1,6 +1,10 @@
+server:
+  port: 7776
+  tomcat:
+    uri-encoding: utf-8
 spring:
   application:
-    name: my-client
+    name: cyb
   cloud:
     config:
-      uri: http://localhost:8888
+      uri: http://localhost:7777

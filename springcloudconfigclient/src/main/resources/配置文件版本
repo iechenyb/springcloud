@@ -1,16 +1,46 @@
-1��config Ĭ��Git����
-ͨ��spring.cloud.config.server.git.uriָ��������Ϣ�洢��git��ַ�����磺https://github.com/spring-cloud-samples/config-repo
-2�����ر��ؿ�������
+
+ͨspring.cloud.config.server.git.uri https://github.com/spring-cloud-samples/config-repo
+
 ### config server native
 spring.profiles.active=native
 spring.cloud.config.server.native.searchLocations=classpath:/config
-3������ ������������
+
 spring.profiles.active=native
 spring.cloud.config.server.native.searchLocations=file:E:\\Java\\Workspaces\\sts\\doc\\file\\config
 
-4������svn����  http://localhost:8888/{application}/{profile}/{label}�����磺http://localhost:8888/dmeo/development/trunk
+http://localhost:8888/{application}/{profile}/{label} http://localhost:8888/dmeo/development/trunk
 ### config server svn
 spring.cloud.config.server.svn.uri=http://localhost:8888/dmeo/development/trunk
 spring.cloud.config.server.svn.username=xxx
 spring.cloud.config.server.svn.password=xxx
 spring.profiles.active=subversion
+
+ spring 为我们提供了大量的激活 profile 的方法，可以通过代码来激活，
+也可以通过系统环境变量、JVM参数、servlet上下文参数来定义 
+spring.profiles.active 参数激活 profile，这里我们通过定义 JVM 参数实现。
+
+1、ENV方式：
+
+ConfigurableEnvironment.setActiveProfiles("test")
+1
+1
+2、JVM参数方式:
+
+  tomcat 中 catalina.bat（.sh中不用“set”） 添加JAVA_OPS。通过设置active选择不同配置文件
+
+set JAVA_OPTS="-Dspring.profiles.active=test"
+  eclipse 中启动tomcat。项目右键 run as –> run configuration–>Arguments–> VM arguments中添加。local配置文件不必上传git追踪管理
+
+-Dspring.profiles.active="local"
+
+1
+
+3、web.xml方式：
+
+<init-param>
+  <param-name>spring.profiles.active</param-name>
+  <param-value>production</param-value>
+</init-param>
+
+4、标注方式（junit单元测试非常实用）：
+@ActiveProfiles({"unittest","productprofile"})
