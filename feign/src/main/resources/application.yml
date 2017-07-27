@@ -1,0 +1,14 @@
+server:
+  port: 6666
+spring:
+  application:
+    name: FEIGN-SERVER
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8888/eureka/
+  instance:
+    preferIpAddress: true
+ribbon:
+  eureka:
+    enabled: true
