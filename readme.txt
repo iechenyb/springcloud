@@ -1,9 +1,3 @@
-http://blog.csdn.net/rickiyeat/article/details/65022310
-https://github.com/Lovnx
-https://github.com/eacdy
-https://github.com/prontera 
-
-
 服务配置：
 springcloudserver  8888 SERVER-BASE
 springcloudconfigserver 7777 CONFIG-CENTER
