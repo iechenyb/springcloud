@@ -1,3 +1,8 @@
 /Service-A/target
 /Service-B/target
 /feign/target
+/springcloudconfigclient/target
+/springcloudservice1/target
+/springcloudservice2/target
+/springcloudconfigserver/target
+/springcloudserver/target
