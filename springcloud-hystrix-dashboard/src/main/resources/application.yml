@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: hystrix-dashboard
+server:
+  port: 9000
+  
+#进入页面http://localhost:9000/hystrix.stream
+#监控http://localhost:8881/hystrix.stream

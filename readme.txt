@@ -14,4 +14,12 @@ SERVICE-A  8880  SERVICE-A
 SERVICE-B  8881  SERVICE-B
 SERVICE-B2  8882  SERVICE-B2
 SERVICE-ADMIN  8883  SERVICE-ADMIN
+springcloudzuul   8884 ZUUL
+springcloudribbon 8885 RIBBON
+springcloudturbine 8886 microservice-hystrix-turbine
+springcloudsleuth  88887 SLEUTH
+springcloud-hystrix-feign 8889 feign-hystrix
+springcloud-hystrix-dashboard 9000 hystrix-dashboard
+
+
            
