@@ -23,7 +23,7 @@ public class ComputeController {
         ServiceInstance instance = client.getLocalServiceInstance();
         Integer r = a + b;
         logger.info("/add, host:" + instance.getHost() + ", service_id:" + instance.getServiceId() + ", result:" + r);
-        return "From Service-B, Result is " + r+"\nPort:"+instance.getPort();
+        return "From Service-B2, Result is " + r+"\nPort:"+instance.getPort();
     }
 
     //B服务调用A服务 http://localhost:8882/testServiceA?a=1&b=234

@@ -17,7 +17,7 @@ import org.springframework.core.env.Environment;
 public class ConfigClientApplication  {
 	public static void main(String[] args) {
 		SpringApplication.run(ConfigClientApplication.class, args);
-		//ConfigurableEnvironment.setActiveProfiles("test");
+		//new SpringApplicationBuilder(ConfigClientApplication.class).web(true).profiles("test").run(args);
 	}
 
 	@Autowired

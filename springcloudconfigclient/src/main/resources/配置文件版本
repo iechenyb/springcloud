@@ -44,3 +44,10 @@ set JAVA_OPTS="-Dspring.profiles.active=test"
 
 4、标注方式（junit单元测试非常实用）：
 @ActiveProfiles({"unittest","productprofile"})
+
+
+http://blog.csdn.net/rickiyeat/article/details/65022310
+https://github.com/Lovnx
+https://github.com/eacdy
+https://github.com/prontera 
+

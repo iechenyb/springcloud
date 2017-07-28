@@ -38,7 +38,7 @@ public class ComputeController {
         ServiceInstance instance = client.getLocalServiceInstance();
         Integer r = a + b;
         logger.info("/add, host:" + instance.getHost() + ", service_id:" + instance.getServiceId() + ", result:" + r);
-        return "From Service-A, Result is " + r;
+        return "From Service-A, Result is " + r+" port is"+instance.getPort();
     }
 
     /**
