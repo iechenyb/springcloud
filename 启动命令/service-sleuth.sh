@@ -1,0 +1,1 @@
+nohup java -jar project/service-sleuth-0.0.1-SNAPSHOT.jar > logs/service-sleuth.log 2>&1 &

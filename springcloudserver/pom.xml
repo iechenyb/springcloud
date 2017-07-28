@@ -4,7 +4,7 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>springcloud</groupId>
-    <artifactId>hyh</artifactId>
+    <artifactId>cyb</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
     <parent>
@@ -15,7 +15,10 @@
 	<properties>   
         <!--设置字符编码及java版本-->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java.version>1.7</java.version>
+        <docker.image.prefix>comcyb</docker.image.prefix>
+         <project.artifactId>cyb</project.artifactId>
+          <project.build.directory>/src/main/dockerfile</project.build.directory>
+           <project.build.finalName>test1.0</project.build.finalName>
     </properties>
     <dependencies>
         <!--  <dependency>
@@ -69,6 +72,24 @@
                     </dependency>
                 </dependencies>
             </plugin>
+             <!-- tag::plugin[] -->
+            <plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <version>0.4.3</version>
+                <configuration>
+                    <imageName>${docker.image.prefix}/${project.artifactId}</imageName>
+                    <dockerDirectory>src/main/docker</dockerDirectory>
+                    <resources>
+                        <resource>
+                            <targetPath>/</targetPath>
+                            <directory>${project.build.directory}</directory>
+                            <include>${project.build.finalName}.jar</include>
+                        </resource>
+                    </resources>
+                </configuration>
+            </plugin>
+            <!-- end::plugin[] -->
         </plugins>
     </build>
 </project>
