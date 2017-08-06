@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   
    <groupId>com.cyb</groupId>
-   <artifactId>springcloudsleuth</artifactId>
+   <artifactId>service-sleuth</artifactId>
    <version>0.0.1-SNAPSHOT</version>
    <name>/springcloudsleuth</name>
    <url>http://maven.apache.org</url>

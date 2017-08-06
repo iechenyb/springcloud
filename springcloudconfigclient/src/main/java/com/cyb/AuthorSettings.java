@@ -19,9 +19,9 @@ import org.springframework.stereotype.Component;
 @ConfigurationProperties(locations = "classpath:author.properties", ignoreUnknownFields = false, prefix = "author")
 public class AuthorSettings {
 	Log log = LogFactory.getLog(AuthorSettings.class);
-	@NotBlank
+	//@NotBlank
 	private String name;//
-	@NotNull
+	//@NotNull
 	private Long age;//
 
 	public String getName() {

@@ -1,0 +1,1 @@
+nohup java -jar project/service-A-0.0.1-SNAPSHOT.jar > logs/service-A.log 2>&1 &

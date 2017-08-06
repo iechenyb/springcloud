@@ -1,0 +1,1 @@
+nohup java -jar project/config-client-0.0.1-SNAPSHOT.jar > logs/config-client.log 2>&1 &

@@ -1,0 +1,1 @@
+nohup java -jar project/service-B2-1.5.2.RELEASE.jar > logs/service-B2.log 2>&1 & 
