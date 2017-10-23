@@ -1,5 +1,7 @@
 package com.cyb.web;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
@@ -17,13 +19,14 @@ public class ComputeController {
 
     @Autowired
     private DiscoveryClient client;
-    //http://localhost:8882/anystr?a=1&b=234 
-    @RequestMapping(value = "/**" ,method = RequestMethod.GET)
-    public String add(@RequestParam Integer a, @RequestParam Integer b) {
+    
+    //http://localhost:8882/anystr?a=1&b=234   /**
+    @RequestMapping(value = "/add" ,method = RequestMethod.GET)
+    public String add(@RequestParam Integer a, @RequestParam Integer b,HttpServletRequest req) {
         ServiceInstance instance = client.getLocalServiceInstance();
         Integer r = a + b;
         logger.info("/add, host:" + instance.getHost() + ", service_id:" + instance.getServiceId() + ", result:" + r);
-        return "From Service-B2, Result is " + r+"\nPort:"+instance.getPort();
+        return "From Service-B2, Result is " + r+"\nPort:"+instance.getPort()+"b2 sessionid is "+req.getSession().getId();
     }
 
     //B服务调用A服务 http://localhost:8882/testServiceA?a=1&b=234

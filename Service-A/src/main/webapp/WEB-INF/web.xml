@@ -23,10 +23,21 @@
         <load-on-startup>1</load-on-startup>
         <async-supported>true</async-supported>
     </servlet>
+    <servlet>
+    	<description>
+    	</description>
+    	<display-name>HttpServletTest</display-name>
+    	<servlet-name>HttpServletTest</servlet-name>
+    	<servlet-class>com.cyb.servlet.HttpServletTest</servlet-class>
+    </servlet>
 
     <servlet-mapping>
         <servlet-name>DispatcherServlet</servlet-name>
         <url-pattern>/</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+    	<servlet-name>HttpServletTest</servlet-name>
+    	<url-pattern>/HttpServletTest</url-pattern>
     </servlet-mapping>
     
     <filter>
