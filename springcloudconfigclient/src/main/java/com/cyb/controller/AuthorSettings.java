@@ -1,13 +1,10 @@
-package com.cyb;
-
-import javax.validation.constraints.NotNull;
+package com.cyb.controller;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.stereotype.Component;
 
 /**
  * 作者 : iechenyb<br>
@@ -15,8 +12,9 @@ import org.springframework.stereotype.Component;
  * <br>
  * 创建时间: 2017年7月27日
  */
-@Configuration
-@ConfigurationProperties(locations = "classpath:author.properties", ignoreUnknownFields = false, prefix = "author")
+@Configuration//
+//@EnableConfigurationProperties
+@ConfigurationProperties(locations = "classpath:/author.properties", ignoreUnknownFields = false, prefix = "author")
 public class AuthorSettings {
 	Log log = LogFactory.getLog(AuthorSettings.class);
 	//@NotBlank
