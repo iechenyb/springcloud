@@ -8,9 +8,6 @@ spring:
           uri: https://github.com/iechenyb/springcloud.git
           searchPaths: my-sample-config
           username: iechenyb
-          password: 
-  bus:
-    trace:
-      enabled: false
+          password: chen13559469
   application:
-    name:config-server
+    name: config-server
