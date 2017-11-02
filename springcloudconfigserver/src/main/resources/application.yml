@@ -7,3 +7,10 @@ spring:
         git:
           uri: https://github.com/iechenyb/springcloud.git
           searchPaths: my-sample-config
+          username: iechenyb
+          password: chen13559469
+  bus:
+    trace:
+      enabled: false
+  application:
+    name:config-server
