@@ -14,6 +14,7 @@ import com.cyb.feign.TestFeignClient.HystrixClientFallback;
 public interface TestFeignClient {
 	
   @RequestMapping("/add")
+  //@HystrixCommand(fallbackMethod = "fallback") 只能出现在实现类上
   public String add(@RequestParam("a") Integer a,@RequestParam("b") Integer b);
 
   @Component

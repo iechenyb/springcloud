@@ -9,3 +9,5 @@
 /Service-Admin/target
 /springcloudsleuth/target
 /springcloudturbine/target
+/springcloud-hystrix-ribbon/target
+/springcloudzuul/target

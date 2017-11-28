@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>01springcloudhellworld</artifactId>
+  <packaging>war</packaging>
+  <parent>
+    <groupId>com.cyb</groupId>
+    <artifactId>springboot</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <name>01springcloudhellworld Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+  <dependencies>
+  		<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<!-- 添加fastjson 依赖包. -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.2.15</version>
+		</dependency>
+		
+		<!-- spring boot devtools 依赖包. -->
+		<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <optional>true</optional>
+           <scope>true</scope>
+		</dependency>
+		
+  </dependencies>
+  <build>
+    <finalName>01springcloudhellworld</finalName>
+  </build>
+</project>

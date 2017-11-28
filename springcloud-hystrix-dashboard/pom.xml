@@ -21,7 +21,11 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
-    
+    <!-- hystrix 断路器-->  
+	<dependency>  
+		<groupId>org.springframework.cloud</groupId>  
+		<artifactId>spring-cloud-starter-hystrix</artifactId>  
+	</dependency>  
 	<dependency>
       <groupId>org.springframework.cloud</groupId>
       <artifactId>spring-cloud-starter-hystrix-dashboard</artifactId>

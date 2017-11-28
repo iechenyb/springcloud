@@ -1,5 +1,7 @@
 package com.cyb.web;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
@@ -38,14 +40,14 @@ public class ComputeController {
      *@return
      */
     @RequestMapping(value = "/add" ,method = RequestMethod.GET)
-    public String add(@RequestParam Integer a, @RequestParam Integer b) {
+    public String add(@RequestParam Integer a, @RequestParam Integer b,HttpServletRequest request) {
     	InterfaceLimit limit = new InterfaceLimit();
         //是否尝试失败
         if (Integer.parseInt("2") <= limit.getUnitNum()) {
 	        ServiceInstance instance = client.getLocalServiceInstance();
 	        Integer r = a + b;
 	        logger.info("/add, host:" + instance.getHost() + ", service_id:" + instance.getServiceId() + ", result:" + r);
-	        return "From Service-B, Result is " + r+"\nPort:"+instance.getPort();
+	        return "From Service-B, Result is " + r+"\nPort:"+instance.getPort()+",sessionid is "+request.getSession().getId();
         }
         return "调用次数超限！";
     }
