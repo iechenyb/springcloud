@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: hystrix-dashboard
+server:
+  port: 7080
+  
+#http://localhost:7080/hystrix.stream ������ҳ��
+#http://localhost:8888/hystrix.stream ��ط���ע������

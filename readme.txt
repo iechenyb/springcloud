@@ -14,7 +14,7 @@ springcloudturbine 8886 microservice-hystrix-turbine
 springcloudsleuth  88887 SLEUTH
 springcloud-hystrix-feign 8889 feign-hystrix
 springcloud-hystrix-dashboard 9000 hystrix-dashboard
-springcloud-hystrix-dashboard 9001 hystrix-dashboard
+springcloud-hystrix-sample 9001 hytrix简单的例子
 
 
            
