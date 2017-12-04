@@ -1,4 +1,4 @@
-package my.springboot;
+package com.cyb;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,8 +23,11 @@ public class Controller {
     }
 
     @RequestMapping("/google")
-    public String getGoogle(){
-        return new CommandHttpCall("http://www.google.com").execute();
+    public String getGoogle(String err){
+    	if(err.equals("1")){
+    		throw new RuntimeException("ddddd");
+    	}
+        return new CommandHttpCall("http://www.unkownwebsite.com").execute();
     }
 
     @RequestMapping("/product")

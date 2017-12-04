@@ -8,7 +8,7 @@
 	</parent>
 	<artifactId>service-Admin</artifactId>
 	<packaging>jar</packaging>
-
+ 	<version>0.0.1</version>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>1.7</java.version>
@@ -46,6 +46,10 @@
     		<groupId>org.springframework.boot</groupId>
     		<artifactId>spring-boot-starter-mail</artifactId>
 		</dependency>
+		<dependency>  
+		    <groupId>org.springframework.boot</groupId>  
+		    <artifactId>spring-boot-starter-test</artifactId>  
+		</dependency> 
 	</dependencies>
 
 	<dependencyManagement>

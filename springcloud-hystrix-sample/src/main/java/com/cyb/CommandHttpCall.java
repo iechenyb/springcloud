@@ -1,4 +1,4 @@
-package my.springboot;
+package com.cyb;
 
 import com.netflix.hystrix.*;
 import org.apache.http.HttpEntity;

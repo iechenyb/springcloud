@@ -10,6 +10,8 @@ import org.springframework.scheduling.annotation.Scheduled;
 
 import com.netflix.governator.annotations.binding.Primary;
 
+//import com.netflix.governator.annotations.binding.Primary;
+
 import de.codecentric.boot.admin.notify.Notifier;
 import de.codecentric.boot.admin.notify.RemindingNotifier;
 
@@ -29,7 +31,7 @@ public class NotifierConfiguration {
     private Notifier notifier;
 
     //服务上线或者下线都通知
-    private String[] reminderStatuses = { "DOWN" };
+    private String[] reminderStatuses = { "DOWN","OFFLINE" };
     
     @Bean
     @Primary
@@ -41,8 +43,13 @@ public class NotifierConfiguration {
         remindingNotifier.setReminderStatuses(reminderStatuses);
         return remindingNotifier;
     }
-
-    @Scheduled(fixedRate = 60L) 
+    /**
+     * 
+     *作者 : iechenyb<br>
+     *方法描述: 6秒调度一次<br>
+     *创建时间: 2017年7月15日
+     */
+    @Scheduled(fixedRate = 6000L) 
     public void remind() {
         remindingNotifier().sendReminders();
     }

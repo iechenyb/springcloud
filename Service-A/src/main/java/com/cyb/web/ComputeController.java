@@ -23,6 +23,8 @@ import org.springframework.web.client.RestTemplate;
 public class ComputeController {
     private final Logger logger = Logger.getLogger(getClass());
 
+    
+    
     @Autowired
     private DiscoveryClient client;
     
@@ -42,7 +44,15 @@ public class ComputeController {
         logger.info("/add, host:" + instance.getHost() + ", service_id:" + instance.getServiceId() + ", result:" + r);
         return "From Service-A, Result is " + r+" port is"+instance.getPort()+",sessionid is "+request.getSession().getId();
     }
-
+    
+    @RequestMapping(value = "/log" ,method = RequestMethod.GET)
+    public void testLog(){
+    	logger.debug("debugger message!");
+    	logger.info("infor message!");
+    	logger.error("error message!");
+    	logger.warn("warn message!");
+    	logger.trace("trace message!");
+    }
     /**
      * 
      *作者 : iechenyb<br>

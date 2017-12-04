@@ -4,8 +4,8 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>springcloud</groupId>
-    <artifactId>cyb</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <artifactId>eurkeserver</artifactId>
+    <version>0.0.1</version>
 
     <parent>
         <groupId>org.springframework.boot</groupId>

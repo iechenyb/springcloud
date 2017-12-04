@@ -1,1 +1,1 @@
-java -jar project/eurekaserver-0.0.1-SNAPSHOT.jar
+java -jar project/eurkeserver-0.0.1.jar
