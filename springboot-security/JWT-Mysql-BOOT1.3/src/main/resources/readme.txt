@@ -20,4 +20,7 @@ http://localhost:8080/admin 只有admin能够访问
 http://localhost:8080/user 只有user能够访问
 4 http://localhost:8080/exit 退出系统
 集成hibernate，security、druid、swagger,anjularjs,事务等等
+简洁版  无xml引入。
+集成quartz，redis
+仅仅引入声明式事务
 
