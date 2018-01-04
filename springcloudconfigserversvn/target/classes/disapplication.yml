@@ -1,0 +1,18 @@
+server:
+  port: 7776
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://192.168.16.113/svn/web/config
+          username: chenyuanbao
+          password: 123
+  bus:
+    trace:
+      enabled: false
+  application:
+    name:config-server-svn
+management:
+ security:
+  enabled:false

@@ -6,7 +6,7 @@ spring:
       server:
         git:
           uri: https://github.com/iechenyb/springcloud.git
-          searchPaths: my-sample-config
+          searchPaths: config-repo
           username: iechenyb
           password: 
   bus:

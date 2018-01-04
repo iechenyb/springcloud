@@ -20,7 +20,7 @@ public class ConfigClientApplication  {
 	public static void main(String[] args) {
 		//SpringApplication.run(ConfigClientApplication.class, args);
 		//spring.application.name+test.properties
-		new SpringApplicationBuilder(ConfigClientApplication.class).web(true).profiles("test").run(args);
+		new SpringApplicationBuilder(ConfigClientApplication.class).web(true).profiles("dev").run(args);
 	}
      //项目启动时，读取配置文件参数做初始化使用
 	@Autowired

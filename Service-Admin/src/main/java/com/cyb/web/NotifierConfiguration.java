@@ -38,7 +38,7 @@ public class NotifierConfiguration {
     public RemindingNotifier remindingNotifier() {
         RemindingNotifier remindingNotifier = new RemindingNotifier(notifier);
         //设定时间，5分钟提醒一次
-        remindingNotifier.setReminderPeriod(TimeUnit.MINUTES.toMillis(5)); 
+        remindingNotifier.setReminderPeriod(TimeUnit.MINUTES.toMillis(30)); 
         //设定监控服务状态，状态改变为给定值的时候提醒
         remindingNotifier.setReminderStatuses(reminderStatuses);
         return remindingNotifier;

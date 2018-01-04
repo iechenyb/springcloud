@@ -1,0 +1,15 @@
+server:
+  port: 7775
+  tomcat:
+    uri-encoding: utf-8
+spring:
+  application:
+    name: myapp
+  rabbitmq:
+    host:127.0.0.1
+    port:5672
+    username:guest
+    password:guest
+  cloud:
+    config:
+      uri: http://localhost:7776
