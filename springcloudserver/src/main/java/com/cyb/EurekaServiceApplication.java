@@ -7,16 +7,16 @@ import org.springframework.boot.context.embedded.EmbeddedServletContainerCustomi
 import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-
-@EnableEurekaServer         //开启eureka服务
-@SpringBootApplication      //springBoot注解,spring在springBoot基础之上来构建项目 implements EmbeddedServletContainerCustomizer
+//https://gitee.com/didispace/SpringCloud-Learning
+@EnableEurekaServer        
+@SpringBootApplication     
 public class EurekaServiceApplication{
 	 @ResponseBody
 	    @RequestMapping(value="/")
 	    String location(){
-	        return "北京";
+	        return "123";
 	    }
-    //spirng boot的标准入口
+
     public static void main(String[] args) {
         SpringApplication.run(EurekaServiceApplication.class, args);
     }

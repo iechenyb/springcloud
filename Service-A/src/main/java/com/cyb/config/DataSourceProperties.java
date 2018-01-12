@@ -1,8 +1,10 @@
 package com.cyb.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
-
-@ConfigurationProperties(prefix = DataSourceProperties.DS, ignoreUnknownFields = false)
+//注入指定前缀的属性名
+@ConfigurationProperties(
+		prefix = DataSourceProperties.DS,
+		ignoreUnknownFields = false)
 public class DataSourceProperties {
     //对应配置文件里的配置键
     final static String DS="mysqldb.datasource";

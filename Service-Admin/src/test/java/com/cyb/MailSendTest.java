@@ -29,15 +29,12 @@ public class MailSendTest {
     @Autowired
     private JavaMailSender sender;
     private String to = "1048417686@qq.com";
-    private String from ="1048417686@qq.com";
+    private String from ="383065059@qq.com";
     @Test
     public void sendSimpleMail() throws Exception {
-    	
-    	 
     	SimpleMailMessage message = new SimpleMailMessage();
-        message.setFrom("383065059@qq.com");
+        message.setFrom(from);
         message.setTo(to);
-        
         message.setSubject("主题：简单邮件");
         message.setText("测试邮件内容");
         sender.send(message);
@@ -53,8 +50,7 @@ public class MailSendTest {
         message.setFrom(from);  
         message.setTo(to);  
         message.setSubject(subject);  
-        message.setText(content);  
-  
+        message.setText(content);
         try {  
             sender.send(message);  
             logger.info("简单邮件已经发送。");  

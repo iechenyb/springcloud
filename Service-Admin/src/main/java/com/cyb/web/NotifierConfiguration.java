@@ -26,13 +26,12 @@ import de.codecentric.boot.admin.notify.RemindingNotifier;
 @Configuration
 @EnableScheduling
 public class NotifierConfiguration {
-	
-    @Autowired
-    private Notifier notifier;
-
+    /*@Autowired
+    private Notifier notifier;*/
+	@Autowired
+	private DingDingNotifier notifier;
     //服务上线或者下线都通知
-    private String[] reminderStatuses = { "DOWN","OFFLINE" };
-    
+    private String[] reminderStatuses = { "DOWN"};
     @Bean
     @Primary
     public RemindingNotifier remindingNotifier() {
