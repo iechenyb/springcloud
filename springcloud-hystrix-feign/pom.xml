@@ -41,7 +41,12 @@
       <groupId>org.springframework.cloud</groupId>
       <artifactId>spring-cloud-starter-hystrix</artifactId>
     </dependency>
-        
+        <!-- 使用Apache HttpClient替换Feign原生httpclient --> 
+		<dependency>
+		  <groupId>com.netflix.feign</groupId>
+		  <artifactId>feign-httpclient</artifactId>
+		  <version>8.14.3</version>
+		</dependency>
 	</dependencies>
 
 	<dependencyManagement>
