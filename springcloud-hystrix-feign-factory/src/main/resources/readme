@@ -1,0 +1,16 @@
+http://192.168.16.211:8889/add?a=16&b=0 test fallback
+http://192.168.16.211:8889/add?a=16&b=1 test 加法
+http://192.168.16.211:8889/object   post {"name":"x","age":20}
+http://192.168.16.211:8889/retUser/chenyb  返回object
+http://192.168.16.211:8889/retList
+http://192.168.16.211:8889/retMap
+
+
+http://192.168.16.211:8889/comAdd?a=1&b=6
+http://192.168.16.211:8889/comSub?a=1&b=6
+http://192.168.16.211:8889/comDiv?a=1&b=6
+http://192.168.16.211:8889/comMulti?a=1&b=6
+http://192.168.16.211:8889/comJson
+
+http://192.168.16.211:8889/comMap
+http://192.168.16.211:8889/comList

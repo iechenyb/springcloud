@@ -18,7 +18,7 @@ import com.cyb.web.User;
  * @author DHUser
  *  从service层通过http调用服务
  */
-@FeignClient("SERVICE-B")
+@FeignClient(name="SERVICE-B",/*fallback =*/fallbackFactory=HystrixClientFallbackFactory.class)
 public interface ComputerFeignService {
 	
   @RequestMapping("/add")
