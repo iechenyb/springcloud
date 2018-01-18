@@ -8,6 +8,7 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.netflix.eureka.EurekaDiscoveryClient.EurekaServiceInstance;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -30,6 +31,17 @@ public class A_Application {
 	    @RequestMapping("/service-instances/{applicationName}")
 	    public List<ServiceInstance> serviceInstancesByApplicationName(
 	            @PathVariable String applicationName) {
+	    	List<String> serviceIds = discoveryClient.getServices();
+	    	System.out.println(serviceIds);
+	    	for(String sid:serviceIds){
+	    		EurekaServiceInstance x;
+	    		List<ServiceInstance> sls = discoveryClient.getInstances(sid);
+	    		for(ServiceInstance si:sls){
+	    			x = (EurekaServiceInstance) si;
+	    			System.out.println(x.getInstanceInfo().getStatus()+","+sid+","+si.getPort()+","+si.getMetadata());
+	    			
+	    		}
+	    	}
 	        return this.discoveryClient.getInstances(applicationName);
 	    }
 

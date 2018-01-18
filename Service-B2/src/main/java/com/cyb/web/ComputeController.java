@@ -12,6 +12,7 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -62,6 +63,11 @@ public class ComputeController {
     }
     @RequestMapping(value = "/object" ,method = RequestMethod.POST)
     public String  object(@RequestBody User user) {
+    	System.out.println("传递对象！"+user.getName());
+        return "user is "+user.getName()+","+user.getAge();
+    }
+    @RequestMapping(value = "/user" ,method = RequestMethod.GET)
+    public String  user(@ModelAttribute("user") User user) {
     	System.out.println("传递对象！"+user.getName());
         return "user is "+user.getName()+","+user.getAge();
     }
