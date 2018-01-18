@@ -1,0 +1,10 @@
+进入hystrixdashboard页面，输入：http://localhost:8886/turbine.stream
+
+#两个feign服务可以单独查看
+http://localhost:8889/hystrix.stream
+http://localhost:8890/hystrix.stream
+
+通过hytrix.stream只能看一个应用的监控信息
+通过turbine.stream可以看多个应用的监控信息
+
+在turbine中配置8889和8890服务进行集群监控！

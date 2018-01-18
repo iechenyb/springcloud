@@ -6,7 +6,7 @@ security.basic.enabled: false
 turbine:
   aggregator:
     clusterConfig: default   # 指定聚合哪些集群，多个使用","分割，默认为default。可使用http://.../turbine.stream?cluster={clusterConfig之一}访问
-  appConfig: hystrix,feign-hystrix
+  appConfig: feign-hystrix-1,feign-hystrix-2 #8889 8890
   clusterNameExpression: new String("default")
   # 1. clusterNameExpression指定集群名称，默认表达式appName；此时：turbine.aggregator.clusterConfig需要配置想要监控的应用名称
   # 2. 当clusterNameExpression: default时，turbine.aggregator.clusterConfig可以不写，因为默认就是default
@@ -15,5 +15,3 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8888/eureka/
-      
-#进入hystrixdashboard页面，输入：localhost:8886/turbine.stream

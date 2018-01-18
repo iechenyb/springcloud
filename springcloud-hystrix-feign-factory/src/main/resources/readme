@@ -16,3 +16,5 @@ http://192.168.16.211:8889/comMap
 http://192.168.16.211:8889/comList
 
 不同类的相同方法名的熔断记录在同一个仪表盘单元中记录！
+#eureka.instance.instance-id=${spring.cloud.client.ipAddress}:${server.port}
+#eureka.instance.prefer-ip-address=true

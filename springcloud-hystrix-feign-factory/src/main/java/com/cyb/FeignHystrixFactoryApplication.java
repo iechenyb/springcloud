@@ -15,9 +15,9 @@ import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 @EnableDiscoveryClient
 //enable @HystrixCommand ，服务降级可以与factory并存！
 @EnableCircuitBreaker 
-@EnableHystrix
-public class FeignHystrixApplication {
+//@EnableHystrix
+public class FeignHystrixFactoryApplication {
   public static void main(String[] args) {
-    SpringApplication.run(FeignHystrixApplication.class, args);
+    SpringApplication.run(FeignHystrixFactoryApplication.class, args);
   }
 }

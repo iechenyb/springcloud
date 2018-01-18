@@ -1,14 +1,15 @@
 server:
-  port: 8889
+  port: 8890
 spring:
   application:
-    name: feign-hystrix
+    name: feign-hystrix-2
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8888/eureka/
+      defaultZone: http://192.168.16.211:8888/eureka/
   instance:
-    hostname:feign
+    hostname:${spring.cloud.client.ipAddress}
+    id:${spring.cloud.client.ipAddress}:${server.port}
 ribbon:
   eureka:
     enabled: true
