@@ -1,20 +1,28 @@
 server:
-  port: 8888
+  port: 8761
 spring:
   application:
-    name: server-config-center
-  cloud:
-    config:
-      server:
-        git:
-          uri: file:///${user.home}/config-repo
-          searchPaths: '{application}'  #搜索各个以服务名命名的文件夹下的所有yml
+    name:cloud-114
+  profiles:slaveA
 eureka:
   instance:
-    hostname: localhost
-    instance-id: localhost:8888
+    leaseRenewalIntervalInSeconds:5
+    leaseExpireationDurationInSeconds:10
   client:
-    registerWithEureka: false  #是否将eureka自身作为应用注册到eureka注册中心
-    fetchRegistry: false       #为true时，可以启动，但报异常：Cannot execute request on any known server
+    registerWithEureka: false  
+    fetchRegistry: false       
     serviceUrl:
-      defaultZone: http://127.0.0.1:8888/eureka/  #注册中心地址
+      defaultZone: http://127.0.0.1:8762/eureka
+---
+server:
+  port: 8762
+spring:
+  application:
+    name:cloud-114
+  profiles:slaveB
+eureka:
+  client:
+    registerWithEureka: false  
+    fetchRegistry: false       
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8761/eureka

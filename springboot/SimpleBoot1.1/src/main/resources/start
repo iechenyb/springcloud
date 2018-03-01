@@ -1,0 +1,1 @@
+java -jar -Dfile.encoding=UTF-8 jar/test-1.0-SNAPSHOT.jar --spring.redis.database=10 --server.port=8088 --server.address=test.com --test.staticPath=file:../code/

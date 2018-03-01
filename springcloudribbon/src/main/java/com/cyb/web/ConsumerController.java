@@ -7,11 +7,15 @@ import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
+import org.springframework.cloud.netflix.ribbon.SpringClientFactory;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
+
+import com.netflix.loadbalancer.ZoneAwareLoadBalancer;
 /**
  * 
  * @author iechenyb
@@ -27,7 +31,9 @@ public class ConsumerController {
     private RestTemplate restTemplate;
     
     @Autowired  
-    private LoadBalancerClient loadBalancerClient;  
+    private LoadBalancerClient loadBalancerClient;
+    @Autowired
+    private SpringClientFactory factory;
     /**
      * 
      *作者 : iechenyb<br>
@@ -69,5 +75,20 @@ public class ConsumerController {
         return restTemplate.getForEntity("http://"+si.getServiceId()+"/add?a="+a+"&b="+b, String.class).getBody()+" ribbon sessionId is "+req.getSession().getId();
     	
     }
-    
+    @GetMapping("lb")
+    public ServiceInstance lb(){
+    	ServiceInstance si = loadBalancerClient.choose("sevice-b");
+    	return si;
+    }
+    @GetMapping("fb")
+    public String fb(){
+    	@SuppressWarnings("rawtypes")
+		ZoneAwareLoadBalancer si 
+    	= (ZoneAwareLoadBalancer)factory.getLoadBalancer("default");
+    	System.out.println(si.getRule().getClass().getName());
+    	 si 
+    	= (ZoneAwareLoadBalancer<?>)factory.getLoadBalancer("serivice-b");
+    	System.out.println(si.getRule().getClass().getName());
+    	return "x";
+    }
 }

@@ -10,7 +10,8 @@ import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 
 /**
- * 类似dubbo的使用
+ * 类似dubbo的使用，hystrixcommand用在普通的方法上
+ * ，如调用dubbo方法是否可以监控呢？
  * implements TestFeignClient
  */
 @RestController
