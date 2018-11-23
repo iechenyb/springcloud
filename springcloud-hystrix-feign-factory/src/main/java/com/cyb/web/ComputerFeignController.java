@@ -19,7 +19,7 @@ public class ComputerFeignController{
 	/*@SuppressWarnings("unused")
 	@Autowired
 	private RestTemplate restTemplate;*/
-	
+	//调用dubbo是否可以监测呢？
 	@Autowired
 	private UserFeignHystrixFactoryClient testFeignClient;
 

@@ -1,0 +1,29 @@
+
+server:
+  port:8884
+zuul:
+  routes:
+    echo:
+      path: /myusers/**
+      serviceId: SERVICE-YMH
+      stripPrefix: false
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8888/eureka/
+hystrix:
+  command:
+    myusers-service:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 1000
+
+SERVICE-YMH:
+  ribbon:
+    NIWSServerListClassName: com.netflix.loadbalancer.ConfigurationBasedServerList
+    ListOfServers: http://localhost:8080,http://localhost:8081
+    ConnectTimeout: 1000
+    ReadTimeout: 3000
+    MaxTotalHttpConnections: 500
+    MaxConnectionsPerHost: 100

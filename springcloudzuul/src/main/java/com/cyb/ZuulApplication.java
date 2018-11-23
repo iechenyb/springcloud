@@ -1,6 +1,7 @@
 package com.cyb;
 
 
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.cloud.client.SpringCloudApplication;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
@@ -13,12 +14,13 @@ import com.cyb.filter.AccessFilter;
 public class ZuulApplication {
 
 	public static void main(String[] args) {
-		new SpringApplicationBuilder(ZuulApplication.class).web(true).run(args);
+		//new SpringApplicationBuilder(ZuulApplication.class).web(true).run(args);
+		 SpringApplication.run(ZuulApplication.class, args);
 	}
 
-	@Bean
+	/*@Bean
 	public AccessFilter accessFilter() {
 		return new AccessFilter();
-	}
+	}*/
 
 }

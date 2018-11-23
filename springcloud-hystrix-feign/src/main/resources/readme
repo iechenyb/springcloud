@@ -14,3 +14,6 @@ http://192.168.16.211:8889/comJson
 
 http://192.168.16.211:8889/comMap
 http://192.168.16.211:8889/comList
+
+https://github.com/yskgood/dubbo-hystrix-support
+https://github.com/Netflix/Hystrix/wiki/How-To-Use

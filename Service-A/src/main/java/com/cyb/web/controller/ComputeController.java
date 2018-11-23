@@ -41,6 +41,11 @@ public class ComputeController {
     @Autowired
     private DiscoveryClient client;
     
+    @RequestMapping(value = "/sayHello" ,method = RequestMethod.GET)
+    public String say(String words){
+    	System.out.println(words);
+    	return words;
+    }
     /**
      * 
      *作者 : iechenyb<br>
