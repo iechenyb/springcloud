@@ -1,4 +1,4 @@
-
+https://github.com/hahaxiaowei/spring-cloud-demo/blob/master/spring-cloud-config-server/pom.xml
 ͨspring.cloud.config.server.git.uri https://github.com/spring-cloud-samples/config-repo
 
 ### config server native
@@ -47,3 +47,16 @@ spring:
     name: cyb
   profiles:
     active: development
+    /**
+ * @author Administrator
+ *http://blog.csdn.net/gongxsh00/article/details/51292200\
+ *启动注意事项 -Dspring.profiles.active=test   test为文件后缀名，
+ *bootstrap.yml 中的spring:application:name=cyb,最终加载的文件为git/cyb-test.yml
+ * http://localhost:7776/my-client/master
+ *从git刷新配置信息 http://localhost:7776/refresh  仅仅支持post请求！
+ *不走消息总线的时候，需要通知各个客户端进行刷新。
+ */
+ /*new SpringApplicationBuilder
+		(ConfigClientApplication.class)
+		.web(true).profiles("dev")
+		.run(args);*/
