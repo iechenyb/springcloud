@@ -10,6 +10,7 @@ import org.springframework.core.env.Environment;
 @SpringBootApplication
 @EnableEurekaClient
 public class ConfigClientApplication  {
+	
 	public static void main(String[] args) {
 		SpringApplication.
 		run(ConfigClientApplication.class, args);
