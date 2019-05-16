@@ -16,14 +16,14 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.cyb.web.Service_AdminApplication;
+import com.cyb.web.AdminMinitorService;
 /**
  *作者 : iechenyb<br>
  *类描述: 说点啥<br>
  *创建时间: 2017年12月4日
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringBootTest(classes = Service_AdminApplication.class)
+@SpringBootTest(classes = AdminMinitorService.class)
 public class MailSendTest {
 	Log logger = LogFactory.getLog(getClass());
     @Autowired

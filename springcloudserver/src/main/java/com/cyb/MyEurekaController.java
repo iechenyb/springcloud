@@ -6,8 +6,6 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.servlet.http.HttpServletRequest;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -34,6 +32,7 @@ import com.netflix.eureka.util.StatusInfo;
 @RestController
 public class MyEurekaController {
 	Log log = LogFactory.getLog(MyEurekaController.class);
+	@SuppressWarnings("unused")
 	private ApplicationInfoManager applicationInfoManager;
 
 	public MyEurekaController(){}

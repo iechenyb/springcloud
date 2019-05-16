@@ -10,9 +10,6 @@ import org.springframework.scheduling.annotation.Scheduled;
 
 import com.netflix.governator.annotations.binding.Primary;
 
-//import com.netflix.governator.annotations.binding.Primary;
-
-import de.codecentric.boot.admin.notify.Notifier;
 import de.codecentric.boot.admin.notify.RemindingNotifier;
 
 /**
